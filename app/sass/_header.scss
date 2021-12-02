@@ -1,0 +1,98 @@
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: $white;
+    z-index: 2;
+    .header {
+        padding: 2rem 2.4rem;
+        max-width: 1110px;
+        margin: 0 auto;
+        img {
+            object-fit: contain;
+        }
+
+        .header__menu--hambuger {
+            cursor: pointer;
+            > div {
+                width: 26px;
+                height: 2px;
+                background-color: $dark_blue;
+                transform-origin: 3px 1px;
+                transition: all 0.3s ease-in-out;
+                &:not(:last-child) {
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+        &__link {
+            text-decoration: none;
+            font-size: $sm-f;
+            color: $grayish_blue;
+            margin: 0 1.7rem;
+            font-weight: lighter;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                background-image: linear-gradient(to right, $lime_gray, $bright_cyan);
+                width: 100%;
+                height: 0.6rem;
+                bottom: -3.1rem;
+                left: 0;
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+            }
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        opacity: 0;
+        top: 6rem;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(rgba($dark_blue, 0.8), transparent);
+    }
+}
+// Everything when you open hambuger menu
+.open {
+    .header__menu--hambuger {
+        > div {
+            &:first-child {
+                transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    .overlay {
+        &__nav {
+            display: block;
+            margin: 2.4rem;
+            padding: 2.5rem 0;
+            background-color: $white;
+            border-radius: 5px;
+            &--link {
+                display: block;
+                padding: 1.3rem 0;
+                text-decoration: none;
+                color: $dark_blue;
+                font-weight: lighter;
+                text-align: center;
+                font-size: $sm-f;
+            }
+        }
+    }
+}

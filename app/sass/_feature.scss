@@ -1,0 +1,65 @@
+.feature {
+    padding: 7.6rem 2.4rem;
+    text-align: center;
+    max-width: 1100px;
+    @include breakpoint-up(medium) {
+        text-align: unset;
+    }
+    @include breakpoint-up(large) {
+        margin: 0 auto;
+    }
+    &__heading {
+        font-size: 3.2rem;
+        color: $dark_blue;
+        font-weight: 300;
+        margin-bottom: 3.6rem;
+        @include breakpoint-up(large) {
+            font-size: 3.6rem;
+        }
+    }
+    &__para {
+        margin-bottom: 6.5rem;
+        > p {
+            font-size: 1.4rem;
+            color: $grayish_blue;
+            line-height: 3rem;
+            @include breakpoint-up(large) {
+                font-size: 1.8rem;
+            }
+        }
+    }
+    &__items {
+        margin-bottom: 1.5rem;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        @include breakpoint-up(medium) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .feature__item {
+            padding: 1.5rem;
+            @include breakpoint-up(medium) {
+                flex: 0 0 50%;
+            }
+            @include breakpoint-up(large) {
+                flex: 1;
+            }
+            img {
+                margin-bottom: 4rem;
+            }
+            h3 {
+                font-size: 2rem;
+                color: $dark_blue;
+                margin-bottom: 2.5rem;
+                font-weight: 300;
+            }
+            p {
+                font-size: 1.4rem;
+                color: $grayish_blue;
+            }
+        }
+    }
+}
+.feature__bg {
+    background-color: $light_grayish_blue;
+}

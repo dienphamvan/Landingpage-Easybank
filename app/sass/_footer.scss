@@ -1,0 +1,98 @@
+.footer {
+    text-align: center;
+    padding: 3.8rem 0;
+    @include breakpoint-up(large) {
+        padding: 5.8rem 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "logo link link button"
+            "social link link copyright";
+    }
+    &__logo {
+        @include breakpoint-up(large) {
+            grid-area: logo;
+            align-self: center;
+        }
+    }
+    &__social {
+        margin: 4rem 0;
+        display: inline-block;
+        > a {
+            &:not(:last-child) {
+                margin-right: 3rem;
+            }
+        }
+        @include breakpoint-up(large) {
+            grid-area: social;
+            align-self: center;
+            margin: 0;
+            > a {
+                margin-right: 0;
+                &:not(:last-child) {
+                    margin-right: 2rem;
+                }
+            }
+        }
+    }
+    &__links {
+        @include breakpoint-up(large) {
+            grid-area: link;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "link1 link2"
+                "link1 link2";
+        }
+        .col1 {
+            @include breakpoint-up(large) {
+                grid-area: link1;
+            }
+        }
+        .col2 {
+            @include breakpoint-up(large) {
+                grid-area: link2;
+            }
+        }
+    }
+    &__link {
+        &:not(:last-child) {
+            @include breakpoint-down(medium) {
+                margin-bottom: 2.2rem;
+            }
+        }
+        display: flex;
+        flex-direction: column;
+        gap: 2.2rem;
+        a {
+            color: $white;
+            font-size: 1.5rem;
+        }
+        @include breakpoint-up(large) {
+            text-align: left;
+            padding-left: 9rem;
+        }
+    }
+    &__cta {
+        margin: 3.5rem 0;
+        @include breakpoint-up(large) {
+            grid-area: button;
+            justify-self: flex-end;
+            align-self: center;
+            margin: 0;
+        }
+    }
+    &__copyright {
+        font-size: 1.3rem;
+        color: $grayish_blue;
+        @include breakpoint-up(large) {
+            grid-area: copyright;
+            justify-self: flex-end;
+            align-self: center;
+        }
+    }
+}
+footer {
+    background-color: $dark_blue;
+}

@@ -1,0 +1,101 @@
+.hero {
+    margin-top: 6rem;
+    @include breakpoint-up(large) {
+        display: flex;
+        margin-top: 8.6rem;
+        height: 65rem;
+        align-items: center;
+    }
+    .hero__img {
+        position: relative;
+        height: 40rem;
+        @include breakpoint-up(large) {
+            flex: 3;
+            order: 2;
+            height: auto; // reset height
+            align-self: stretch; // làm chiều cao hết cỡ
+        }
+        .hero__img--bg {
+            background-image: url(../images/bg-intro-mobile.svg);
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: left 0 bottom 0;
+            background-repeat: no-repeat;
+            position: absolute;
+            @include breakpoint-up(medium) {
+                background-image: url(../images/bg-intro-desktop.svg);
+                background-position: 15% 80%;
+                background-size: 90%;
+            }
+            @include breakpoint-up(large) {
+                background-image: url(../images/bg-intro-desktop.svg);
+                width: 150%;
+                background-position: 0% 80%;
+            }
+        }
+        .hero__img--mockups {
+            top: -6rem;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 93%;
+            height: 40rem;
+            background-image: url(../images/image-mockups.png);
+            background-size: cover;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            @include breakpoint-up(medium) {
+                background-size: 76%;
+                top: 0;
+                background-position: 50% 92%;
+            }
+            @include breakpoint-up(large) {
+                height: 106%;
+                top: 0px;
+                left: 80%;
+                width: 108%;
+                background-position: 125% 67%;
+                background-size: 100%;
+            }
+        }
+    }
+    .hero__text {
+        text-align: center;
+        padding: 0 2.4rem 9rem 2.4rem;
+        @include breakpoint-up(large) {
+            flex: 2;
+            order: 1;
+            text-align: left;
+        }
+        @include breakpoint-up(medium) {
+            padding-top: 5rem;
+        }
+        .hero__text--title {
+            margin: 0;
+            color: $dark_blue;
+            font-size: 4rem;
+            font-weight: lighter;
+            @include breakpoint-up(large) {
+                font-size: 5rem;
+            }
+        }
+        p {
+            font-size: $sm-f;
+            margin: 2rem 0;
+            color: $grayish_blue;
+            font-weight: lighter;
+            line-height: 2.5rem;
+            @include breakpoint-up(large) {
+                font-size: $lg-f;
+            }
+        }
+        &--btn {
+            margin-top: 3rem;
+        }
+    }
+}
+
+.hero__bg {
+    background-color: $very_light_gray;
+}
